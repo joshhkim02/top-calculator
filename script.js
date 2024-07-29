@@ -31,4 +31,4 @@ const subtract = (num1, num2) => num1 - num2;
 const multiply = (num1, num2) => num1 * num2;
 const divide = (num1, num2) => num1 / num2;
 
-console.log(operate(4, 2, '/'));
+// Populate display when number buttons are clicked
