@@ -13,18 +13,15 @@ function operate(first, second, operation) {
     case '/':
       result = divide(first, second);
       break;
-    default:
-      console.log('Incorrect input!');
-      break;
   }
   return result;
 }
 
 // Calculator display variables
-let firstNum;
-let operator;
-let secondNum;
-let displayValue;
+let firstNum = '';
+let operator = '';
+let secondNum = '';
+let displayValue = '';
 
 // Calculator functions
 const add = (num1, num2) => num1 + num2;
@@ -61,9 +58,15 @@ btnOperatorSelector.forEach((item) => {
   });
 });
 
+// Equals button
 const btnEqualSelector = document.querySelector('.operation-equals');
 
 btnEqualSelector.addEventListener('click', (event) => {
+  if (firstNum === '' || operator === '') {
+    alert(
+      'You tried evaluating without the proper arguments/operators! Try again.'
+    );
+  }
   secondNum = displayValue;
   let evaluation = operate(Number(firstNum), Number(secondNum), operator);
   console.log(evaluation);
