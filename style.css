@@ -1,0 +1,100 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+html {
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  border: 1px solid black;
+  width: 700px;
+  height: 700px;
+  border-radius: 30px;
+}
+
+.calc-result {
+  box-sizing: border-box;
+  display: flex;
+  border: 1px solid black;
+  padding: 40px;
+  height: 125px;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.numberpad-container {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  border: 1px solid black;
+  height: 500px;
+  margin: 20px;
+}
+
+.number-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  height: 100%;
+  width: 50%;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  font-size: 20px;
+  height: 70px;
+  width: 70px;
+  padding: 10px;
+}
+
+.operation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+  border: 1px solid black;
+  height: 100%;
+  width: 50%;
+  gap: 10px;
+  padding: 10px;
+}
+
+.operation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 140px;
+  border: 1px solid black;
+}
+
+.operation-equals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 90px;
+  border: 1px solid black;
+}
+
+.symbol {
+  font-size: 35px;
+}
