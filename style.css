@@ -101,3 +101,16 @@ html {
 .symbol {
   font-size: 35px;
 }
+
+.multiplication {
+  padding-top: 15px;
+}
+
+.subtraction {
+  font-size: 50px;
+  padding-bottom: 5px;
+}
+
+.word {
+  font-size: 20px;
+}
