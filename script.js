@@ -28,6 +28,7 @@ function clearAll() {
   secondNum = '';
   displayValue = '';
   oldValue = '';
+  oldOperator = '';
   displayText.textContent = '0';
 }
 
@@ -37,6 +38,7 @@ let operator = '';
 let secondNum = '';
 let displayValue = '';
 let oldValue = '';
+let newOperator = '';
 
 // Calculator functions
 const add = (num1, num2) => num1 + num2;
@@ -69,6 +71,9 @@ btnOperatorSelector.forEach((item) => {
     if (oldValue === '') {
       firstNum = displayValue;
     } else firstNum = oldValue;
+    if (operator !== '') {
+      newOperator = operator;
+    }
     operator = item.textContent;
     displayValue = '';
     displayText.textContent = '0';
