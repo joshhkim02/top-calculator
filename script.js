@@ -11,6 +11,11 @@ function operate(first, second, operation) {
       result = multiply(first, second);
       break;
     case '/':
+      if (second === 0) {
+        alert("You can't do that, it will return NaN!");
+        result = 'NaN';
+        break;
+      }
       result = divide(first, second);
       break;
   }
@@ -22,6 +27,7 @@ function clearAll() {
   operator = '';
   secondNum = '';
   displayValue = '';
+  oldValue = '';
   displayText.textContent = '0';
 }
 
@@ -30,6 +36,7 @@ let firstNum = '';
 let operator = '';
 let secondNum = '';
 let displayValue = '';
+let oldValue = '';
 
 // Calculator functions
 const add = (num1, num2) => num1 + num2;
@@ -59,7 +66,9 @@ const btnOperatorSelector = document.querySelectorAll('.operation');
 
 btnOperatorSelector.forEach((item) => {
   item.addEventListener('click', (event) => {
-    firstNum = displayValue;
+    if (oldValue === '') {
+      firstNum = displayValue;
+    } else firstNum = oldValue;
     operator = item.textContent;
     displayValue = '';
     displayText.textContent = '0';
@@ -78,7 +87,13 @@ btnEqualSelector.addEventListener('click', (event) => {
   }
   secondNum = displayValue;
   let evaluation = operate(Number(firstNum), Number(secondNum), operator);
-  console.log(evaluation);
+  if (evaluation === 'NaN') {
+    evaluation = '0';
+    clearAll();
+  }
+  oldValue = String(evaluation);
+  console.log(oldValue);
+  console.log(typeof oldValue);
   displayText.textContent = evaluation;
 });
 
