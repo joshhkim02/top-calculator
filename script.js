@@ -17,6 +17,14 @@ function operate(first, second, operation) {
   return result;
 }
 
+function clearAll() {
+  firstNum = '';
+  operator = '';
+  secondNum = '';
+  displayValue = '';
+  displayText.textContent = '0';
+}
+
 // Calculator display variables
 let firstNum = '';
 let operator = '';
@@ -66,9 +74,15 @@ btnEqualSelector.addEventListener('click', (event) => {
     alert(
       'You tried evaluating without the proper arguments/operators! Try again.'
     );
+    clearAll();
   }
   secondNum = displayValue;
   let evaluation = operate(Number(firstNum), Number(secondNum), operator);
   console.log(evaluation);
   displayText.textContent = evaluation;
 });
+
+// Clear button
+const btnClearSelector = document.querySelector('#clear');
+
+btnClearSelector.addEventListener('click', clearAll);
