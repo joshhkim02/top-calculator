@@ -16,7 +16,7 @@ function operate(first, second, operation) {
         result = 'NaN';
         break;
       }
-      result = divide(first, second);
+      result = divide(first, second).toFixed(5);
       break;
   }
   return result;
