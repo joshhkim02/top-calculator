@@ -117,3 +117,7 @@ html {
 .word {
   font-size: 20px;
 }
+
+#clear {
+  width: 290px;
+}
